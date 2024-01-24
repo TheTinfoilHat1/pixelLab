@@ -113,9 +113,18 @@ public class Picture extends SimplePicture
       {
         leftPixel = pixels[row][col];
         rightPixel = pixels[row][width - 1 - col];
-        rightPixel.setColor(leftPixel.getColor());
+        leftPixel.setColor(rightPixel.getColor());
       }
     } 
+  }
+  
+  /** Mirrors from right to left */
+  public void mirrorVerticalRightToLeft()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      Pixel leftPixel = null;
+      Pixel rightPixel = null;
+      
   }
   
   /** Mirror just part of a picture of a temple */

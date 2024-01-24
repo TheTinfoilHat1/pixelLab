@@ -111,7 +111,7 @@ public class IntArrayWorker
       {
         if (item == num)
         {
-            count +=1;
+            count +=                 1;
         }
       }
     }
