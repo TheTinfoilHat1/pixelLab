@@ -17,6 +17,15 @@ public class PictureTester
     beach.explore();
   }
   
+  /** Method to test keepOnlyBlue */
+  public static void testkeepOnlyBlue()
+  {
+      Picture beach = new Picture("beach.jpg");
+      beach.explore();
+      beach.keepOnlyBlue();
+      beach.explore();
+  }
+  
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
@@ -51,6 +60,23 @@ public class PictureTester
     swan.explore();
   }
   
+  /** Method to test negate */
+  public static void testNegate()
+  {
+      Picture beach = new Picture("beach.jpg");
+      beach.explore();
+      beach.negate();
+      beach.explore();
+  }
+  
+  /** Method to test grayscale */
+  public static void testGrayscale()
+  {
+      Picture beach = new Picture("beach.jpg");
+      beach.explore();
+      beach.grayscale();
+      beach.explore();
+  }
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -58,7 +84,10 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
+    //testZeroBlue();
+    //testNegate();
+    testGrayscale();
+    //testkeepOnlyBlue();
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();

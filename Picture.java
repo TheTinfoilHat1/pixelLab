@@ -1,4 +1,4 @@
-import java.awt.*;
+    import java.awt.*;
 import java.awt.font.*;
 import java.awt.geom.*;
 import java.awt.image.BufferedImage;
@@ -217,6 +217,52 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void keepOnlyBlue()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    } 
+  }
+  
+  public void negate()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(225-pixelObj.getRed());
+        pixelObj.setGreen(225-pixelObj.getGreen());
+        pixelObj.setBlue(225-pixelObj.getBlue());
+      }
+    } 
+  }
+  
+  public void grayscale()
+  {
+      Pixel[][] pixels = this.getPixels2D();
+      for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int avg = 0;
+        avg += pixelObj.getRed();
+        avg += pixelObj.getGreen();
+        avg += pixelObj.getBlue();
+        
+        avg = avg / 3;
+        
+        Color grayColor = new Color(avg, avg, avg);
+        pixelObj.setColor(grayColor);
+      }
+    } 
+  }
   
   /* Main method for testing - each class in Java can have a main 
    * method 
